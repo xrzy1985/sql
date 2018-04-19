@@ -1,0 +1,8 @@
+What is a Primary Key exactly?
+
+- They identify a row or record uniquely
+- it must be unique to the row
+- the value must not be NULL
+- the original value cannot change
+- the best practice is to AUTO_INCREMENT the value
+    of the key
