@@ -1,3 +1,16 @@
+/*
+Atomic Tables and Table Normalization
+
+- every table should focus on describing exactly one thing
+- then ask what do you need to describe the things inside your TABLE
+- if any of the attributes need multiple values, break them up
+    or discard them
+- avoid multiple columns with the same information
+- do not include multiple values in one cell
+- this is called normalizing the table
+
+*/
+
 DROP database if exists school;
 
 CREATE DATABASE school;
@@ -47,6 +60,5 @@ CREATE TABLE student(
     */
     student_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
 
-
-
-    
+-- Let us describe the table we just created
+DESCRIBE student;

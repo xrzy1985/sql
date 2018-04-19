@@ -1,0 +1,28 @@
+Data Types
+
+  Numeric Types
+  - TINYINT: 127 TO -128
+  - SMALLINT: 32,768 TO -32, 767
+  - MEDIUMINT: 8,388,608 TO -8,388,608
+  - INT: 2^(31) TO (-2^(31)-1)
+  - BIGINT: 2^(63) TO -(2^(63) -1)
+  - FLOAT: (DECIMAL SPACES), 1.1E... TO -1.1e...
+  - DOUBLE: (DECIMAL SPACES), 1.7E... TO -1.7E...
+
+  String Types
+    - CHAR: character string with fixed length
+    - VARCHAR: character string that has a variable length
+    - BLOB: can contain up to 2^(16) bytes of data
+    - ENUM: character string that has limited number of total
+        values; which you must predefine (male, female, etc)
+    - SET: a list of legal possible character strings. It is
+        basically a list of possible values for the entry.
+        Since a SET will allow multiple values
+
+    Date Types
+
+    - DATE: YYYY-MM-DD
+    - TIME: HH:MM:SS
+    - DATETIME: YYYY-MM-DD HH:MM:SS
+    - TIMESTAMP: YYYYMMDDHHMMSS
+    - YEAR: YYYY
