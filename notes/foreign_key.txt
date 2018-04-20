@@ -1,0 +1,8 @@
+What are foreign Keys?
+
+- they are used to make a reference to a Primary key
+    in a completely different table
+- they can have different names then the keys they
+    will be linking to
+- the value of a foreign key can have the value of NULL
+- they do not have to be unique 
