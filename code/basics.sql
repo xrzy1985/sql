@@ -1,4 +1,5 @@
 --  A comment is two dashes
+-- # a hash tag apparently works in MySQL workbench 6.3
 /*
     Or the conventional multiline comment
 */
