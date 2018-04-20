@@ -121,5 +121,11 @@ SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'NAME',
   COUNT(SEX='F') AS 'GIRLS'
   FROM STUDENTS;
 
+
+
 -- You will notice that I switch from capital to lowercase
 -- that is because in MySQL it does not matter
+
+-- use count to see how many boys and girls there are
+SELECT SEX, COUNT(*) FROM STUDENTS
+  GROUP BY SEX;
