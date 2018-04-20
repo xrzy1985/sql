@@ -67,3 +67,59 @@ ORDER BY LAST_NAME;
 -- reverse order ; just add the DESC at the end
 SELECT FIRST_NAME, LAST_NAME, EMAIL, SEX FROM STUDENTS
 ORDER BY LAST_NAME DESC;
+
+-- MULTIPLE ORDER BY STATEMENTS BEING PASSED
+SELECT FIRST_NAME, LAST_NAME, EMAIL, SEX FROM STUDENTS
+ORDER BY LAST_NAME DESC, SEX ASC;
+
+-- standard every day query except that it will only give you the top 5 according to primary keys
+SELECT FIRST_NAME, LAST_NAME FROM STUDENTS LIMIT 5;
+
+-- next 6?
+SELECT FIRST_NAME, LAST_NAME FROM STUDENTS LIMIT 5, 11;
+
+-- first name and last name to be concatenated
+SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'FULL_NAME' FROM STUDENTS;
+
+-- more than one concatenation
+SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'NAME',
+CONCAT(CITY, ", " , STATE) AS 'HOMETOWN' FROM STUDENTS;
+
+-- LIKE choose all the students whose first name starts with a J
+-- and their last name ends with a n or s
+SELECT LAST_NAME, FIRST_NAME, EMAIL FROM STUDENTS
+WHERE FIRST_NAME LIKE 'J%' OR LAST_NAME LIKE '%n' OR '%s';
+
+-- Underscores match any character that could be present
+-- want to find James? 4 underscores and a s
+SELECT LAST_NAME, FIRST_NAME, EMAIL, SEX
+FROM STUDENTS
+WHERE FIRST_NAME LIKE '____S';
+
+-- another example
+SELECT LAST_NAME, FIRST_NAME, CONCAT(CITY, ", ", STATE) AS 'LOCATION', SEX
+FROM STUDENTS WHERE LAST_NAME LIKE 'C____';
+
+-- when we only want to show something once for sure
+-- use DISTINCT in that situation
+-- here we will get distinct values
+SELECT DISTINCT STATE FROM STUDENTS ORDER BY STATE;
+
+-- Lets see how many distinct states there actually are
+-- using COUNT
+
+SELECT COUNT(DISTINCT STATE) AS NUMBER_OF_DISTINCT_STATES_PRESENT FROM STUDENTS;
+
+-- Lets see how many distinct students there actually are
+-- using COUNT
+
+SELECT COUNT(DISTINCT STUDENT_ID) AS NUMBER_OF_DISTINCT_STUDENTS FROM STUDENTS;
+
+-- use count to see how many boys and girls there are
+SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'NAME',
+  COUNT(SEX = 'M') AS 'BOYS',
+  COUNT(SEX='F') AS 'GIRLS'
+  FROM STUDENTS;
+
+-- You will notice that I switch from capital to lowercase
+-- that is because in MySQL it does not matter
