@@ -129,3 +129,31 @@ SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'NAME',
 -- use count to see how many boys and girls there are
 SELECT SEX, COUNT(*) FROM STUDENTS
   GROUP BY SEX;
+
+
+  /*
+
+  	now lets look at how a where statement will work
+
+  */
+
+  USE SCHOOL;
+  -- use count to see how many boys and girls there are
+  SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS 'NAME',
+  	COUNT(SEX = 'M') AS 'BOYS',
+      COUNT(SEX='F') AS 'GIRLS'
+      FROM STUDENTS;
+
+
+  -- more with Group By
+  SELECT MONTH(BIRTH_DATE) AS 'MN', COUNT(*)
+  FROM STUDENTS GROUP BY MN
+  ORDER BY MN;
+
+  -- HAVING is a great adjective to use during SQL queries
+  -- this will get the state, and the amount of each state from students
+  -- group the info by states that have more than one student from them
+  SELECT STATE, COUNT(STATE) AS 'AMOUNT'
+  FROM STUDENTS
+  GROUP BY STATE
+  HAVING AMOUNT > 1;
